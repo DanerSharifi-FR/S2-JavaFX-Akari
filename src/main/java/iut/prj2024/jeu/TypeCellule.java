@@ -3,7 +3,7 @@ package iut.prj2024.jeu;
 public enum TypeCellule {
     VIDE('.'),
     MUR('#'),
-    AMPLOULE('*'),
+    AMPOULE('*'),
     ILLUMINEE('-');
 
     private final char symbol;

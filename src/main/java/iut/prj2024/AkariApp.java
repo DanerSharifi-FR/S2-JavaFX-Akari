@@ -10,8 +10,6 @@ import javafx.stage.Stage;
 public class AkariApp extends Application {
 
 	public void start(Stage primaryStage) {
-        String javaVersion   = System.getProperty("java.version");
-        
         BorderPane root = new BorderPane();
         root.setCenter(new Label("Projet IHM 2024\nAkari App"));
         

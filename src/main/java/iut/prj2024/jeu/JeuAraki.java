@@ -52,7 +52,7 @@ public class JeuAraki {
     public ReponsePlacement placerAmpoule(int x, int y) {
         ReponsePlacement erreur = peutPlacerAmpoule(x, y);
         if (erreur == ReponsePlacement.AJOUTE_AMPOULE) {
-            cellules[x][y].setType(TypeCellule.AMPLOULE);
+            cellules[x][y].setType(TypeCellule.AMPOULE);
             allumerAmpoule(x, y);
         } else if (erreur == ReponsePlacement.SUPPRIME_AMPOULE) {
             cellules[x][y].setType(TypeCellule.VIDE);
@@ -146,7 +146,7 @@ public class JeuAraki {
         if (cellules[x][y].getType() == TypeCellule.ILLUMINEE) {
             return ReponsePlacement.DEJA_ECLAIREE;
         }
-        if (cellules[x][y].getType() == TypeCellule.AMPLOULE) {
+        if (cellules[x][y].getType() == TypeCellule.AMPOULE) {
             return ReponsePlacement.SUPPRIME_AMPOULE;
         }
         // Vérifier la conformité autour des murs numérotés
@@ -174,7 +174,7 @@ public class JeuAraki {
         }
     }
     private int compteAmpoule(int x, int y) {
-        if (x>=0 && x<largeur && y>=0 && y<hauteur && cellules[x][y].getType() == TypeCellule.AMPLOULE) {
+        if (x>=0 && x<largeur && y>=0 && y<hauteur && cellules[x][y].getType() == TypeCellule.AMPOULE) {
             return 1;
         } else {
             return 0;
@@ -198,7 +198,7 @@ public class JeuAraki {
         // allumer toutes les Ampoules
         for (int i = 0; i < largeur; i++) {
             for (int j = 0; j < hauteur; j++) {
-                if (cellules[i][j].getType()==TypeCellule.AMPLOULE) {
+                if (cellules[i][j].getType()==TypeCellule.AMPOULE) {
                     allumerAmpoule(i, j);
                 }
             }
