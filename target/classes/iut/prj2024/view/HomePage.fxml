@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="348.0" minWidth="512.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="iut.prj2024.view.HomePageController">
+<BorderPane minHeight="348.0" minWidth="512.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.prj2024.view.HomePageController">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="90.0" prefWidth="512.0" BorderPane.alignment="CENTER">
          <children>
@@ -85,7 +85,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" selected="true" text="3 x 3" GridPane.rowIndex="1">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" selected="true" text="3x3" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -93,27 +93,27 @@
                         <ToggleGroup fx:id="dimensions" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="6 x 4" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="6x4" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="5 x 5" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="5x5" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="7 x 7" toggleGroup="$dimensions" GridPane.rowIndex="2">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="7x7" toggleGroup="$dimensions" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="14 x 14" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="14x14" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="10 x 10" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="10x10" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -135,7 +135,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" selected="true" text="Easy">
+                  <RadioButton fx:id="easyRadioButton" mnemonicParsing="false" selected="true" text="Easy">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -143,12 +143,12 @@
                         <ToggleGroup fx:id="difficulty" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton disable="true" mnemonicParsing="false" text="Hard" toggleGroup="$difficulty" GridPane.columnIndex="1">
+                  <RadioButton fx:id="hardRadioButton" disable="true" mnemonicParsing="false" text="Hard" toggleGroup="$difficulty" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton disable="true" mnemonicParsing="false" text="Tricky" toggleGroup="$difficulty" GridPane.columnIndex="2">
+                  <RadioButton fx:id="trickyRadioButton" disable="true" mnemonicParsing="false" text="Tricky" toggleGroup="$difficulty" GridPane.columnIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -157,8 +157,8 @@
             </GridPane>
             <ButtonBar GridPane.columnIndex="1" GridPane.rowIndex="2">
               <buttons>
-                <Button mnemonicParsing="false" styleClass="quit-button" text="Quit" />
-                  <Button mnemonicParsing="false" styleClass="start-button" text="Start" />
+                <Button mnemonicParsing="false" onAction="#quitButtonAction" styleClass="quit-button" text="Quit" />
+                  <Button mnemonicParsing="false" onAction="#startButtonAction" styleClass="start-button" text="Start" />
               </buttons>
             </ButtonBar>
          </children>
