@@ -41,37 +41,42 @@ public class HomePageController implements Initializable {
     @FXML
     private RadioButton trickyRadioButton;
 
+    private AkariApp AkariApp;
+
+    public void setAkariApp(AkariApp getAkariApp) {
+        this.AkariApp = getAkariApp;
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
     @FXML
     public void startButtonAction() {
-        if (dimension3x3RadioButton.isSelected()) {
-
-        } else if (dimension5x5RadioButton.isSelected()) {
-
-        } else if (dimension6x4RadioButton.isSelected()) {
-
-        } else if (dimension7x7RadioButton.isSelected()) {
-
-        } else if (dimension10x10RadioButton.isSelected()) {
-
-        } else if (dimension14x14RadioButton.isSelected()) {
-
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Please select a dimension").show();
+        if (getDifficulty().isEmpty()) {
+            System.out.println("No dimension selected");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please select a dimension");
+            alert.showAndWait();
         }
+
+        String[] dimensions = getDimension().split("x");
+        int dimensionWidth = Integer.parseInt(dimensions[0]);
+        int dimensionHeight = Integer.parseInt(dimensions[1]);
+        String difficulty = getDifficulty().toLowerCase();
+
+        AkariApp akariApp = new AkariApp();
+        akariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
+        this.AkariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
     }
 
     @FXML
     public void checkDifficultyAvailable() {
         if (dimensions.getSelectedToggle() != null) {
-            String dimension = dimensions.getSelectedToggle().toString();
-            dimension = dimension.substring(dimension.indexOf("'") + 1);
-            dimension = dimension.substring(0, dimension.indexOf("'"));
+            String dimension = getDimension();
 
-            String[] levels = availableLevels(dimension, false);
+            String[] levels = availableLevels(dimension);
             System.out.println(Arrays.toString(levels));
             this.easyRadioButton.setDisable(levels[0] == null);
             if (this.easyRadioButton.isSelected() && levels[0] == null) {
@@ -88,8 +93,7 @@ public class HomePageController implements Initializable {
         }
     }
 
-
-    private String[] availableLevels(String dimension, boolean showAllFiles) {
+    private String[] availableLevels(String dimension) {
         File folder = new File(pathToDimension(dimension));
         File[] files = folder.listFiles((dir, name) -> name.startsWith("easy") || name.startsWith("hard") || name.startsWith("tricky"));
         if (files == null) {
@@ -97,32 +101,30 @@ public class HomePageController implements Initializable {
             System.out.println(folder.getAbsolutePath());
             return new String[0];
         }
-        String[] levels = new String[files.length];
-        if (showAllFiles) {
-            for (int i = 0; i < files.length; i++) {
-                levels[i] = files[i].getName();
-            }
-        } else {
-            levels = new String[3];
-            if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("easy"))) {
-                levels[0] = "easy";
-            }
-            if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("hard"))) {
-                levels[1] = "hard";
-            }
-            if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("tricky"))) {
-                levels[2] = "tricky";
-            }
+        String[] levels = new String[3];
+        if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("easy"))) {
+            levels[0] = "easy";
+        }
+        if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("hard"))) {
+            levels[1] = "hard";
+        }
+        if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("tricky"))) {
+            levels[2] = "tricky";
         }
         return levels;
     }
 
-    private String pathToDimension(String dimension) {
-        return "src/main/resources/iut/prj2024/jeu/dataset/" + dimension;
+    private String getDimension() {
+        return dimensions.getSelectedToggle().toString().substring(dimensions.getSelectedToggle().toString().indexOf("'") + 1, dimensions.getSelectedToggle().toString().lastIndexOf("'"));
     }
 
-    private String pathToLevel(String dimension, String difficulty) {
-        return pathToDimension(dimension) + "/" + difficulty;
+    private String getDifficulty() {
+        if (difficulty.getSelectedToggle() == null) return "";
+        return difficulty.getSelectedToggle().toString().substring(difficulty.getSelectedToggle().toString().indexOf("'") + 1, difficulty.getSelectedToggle().toString().lastIndexOf("'"));
+    }
+
+    public String pathToDimension(String dimension) {
+        return "src/main/resources/iut/prj2024/jeu/dataset/" + dimension;
     }
 
     @FXML
@@ -132,7 +134,8 @@ public class HomePageController implements Initializable {
 
     /**
      * Initializes the controller class.
-     * @param url The location used to resolve relative paths for the root object, or null if the location is not known.
+     *
+     * @param url            The location used to resolve relative paths for the root object, or null if the location is not known.
      * @param resourceBundle The resources used to localize the root object, or null if the root object was not localized.
      */
     @Override

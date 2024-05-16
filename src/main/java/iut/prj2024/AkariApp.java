@@ -1,6 +1,7 @@
-package iut.prj2024; 
+package iut.prj2024;
 
 
+import iut.prj2024.view.GameController;
 import iut.prj2024.view.HomePageController;
 import javafx.application.Application;
 import javafx.beans.InvalidationListener;
@@ -10,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class AkariApp extends Application {
@@ -19,7 +21,7 @@ public class AkariApp extends Application {
     private String dimension;
     private String difficulty;
 
-	public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.root = new BorderPane();
 
@@ -41,9 +43,40 @@ public class AkariApp extends Application {
 
             BorderPane homePage = loader.load();
             HomePageController controller = loader.getController();
-            controller.setStage(primaryStage);
+            controller.setStage(this.primaryStage);
 
             this.root.setCenter(homePage);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+
+    public void loadGame(int width, int height, String difficulty) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(AkariApp.class.getResource("view/Game.fxml"));
+
+            BorderPane game = loader.load();
+
+            Scene scene = new Scene(game);
+            scene.getStylesheets().add(AkariApp.class.getResource("style.css").toExternalForm());
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Play an Akari game");
+
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(this.primaryStage);
+            dialogStage.setScene(scene);
+
+            GameController controller = loader.getController();
+            System.out.println("Width: " + width + " Height: " + height + " Difficulty: " + difficulty);
+            controller.setDimension(width, height);
+            controller.setDifficulty(difficulty);
+            controller.initGame();
+
+            // dialogStage.show();
+            dialogStage.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
