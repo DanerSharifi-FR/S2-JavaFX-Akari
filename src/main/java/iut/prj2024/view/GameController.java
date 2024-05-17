@@ -10,6 +10,7 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,6 +29,10 @@ public class GameController implements Initializable {
     private Label difficultyLabel;
     @FXML
     private Label timeLabel;
+    @FXML
+    private Button resetButton;
+    @FXML
+    private Button newGameButton;
 
     public void setDimension(int width, int height) {
         this.width = width;
@@ -49,16 +54,13 @@ public class GameController implements Initializable {
     }
 
     public void initGame() {
-        String pathToFile = "jeu/dataset/" + this.width + "x" + this.height + "/" + this.difficulty + ".txt";
+        String fileName = this.chooseRandomIfManyFiles(this.width + "x" + this.height, this.difficulty);
+        String pathToFile = "jeu/dataset/" + this.width + "x" + this.height + "/" + fileName;
 
         RowConstraints rc = new RowConstraints();
-        rc.setPrefHeight(1000);
-        rc.setVgrow(Priority.ALWAYS);
         rc.setFillHeight(true);
 
         ColumnConstraints cc = new ColumnConstraints();
-        cc.setPrefWidth(1000);
-        cc.setHgrow(Priority.ALWAYS);
         cc.setFillWidth(true);
 
         this.gridPane.getColumnConstraints().set(0, cc);
@@ -76,19 +78,19 @@ public class GameController implements Initializable {
 
                 switch (type) {
                     case "MUR":
-                        button.setStyle("-fx-background-color: black; -fx-text-fill: white; -fx-border-radius: 0!important;");
+                        button.getStyleClass().add("mur-btn");
                         if (jeu.getCellule(i, j).getNombreAmpoulesNecessaires() > 0) {
                             button.setText(String.valueOf(jeu.getCellule(i, j).getNombreAmpoulesNecessaires()));
                         }
                         break;
                     case "LUMIERE":
-                        button.setStyle("-fx-background-color: yellow");
+                        button.getStyleClass().add("lumiere-btn");
                         break;
                     case "VIDE":
-                        button.setStyle("-fx-background-color: white; -fx-border-style: solid; -fx-border-color: black; -fx-border-width: 1px;");
+                        button.getStyleClass().add("vide-btn");
                         break;
                     case "AMP":
-                        button.setStyle("-fx-background-color: blue");
+                        button.getStyleClass().add("amps-btn");
                         break;
                 }
 
@@ -97,5 +99,15 @@ public class GameController implements Initializable {
                 this.gridPane.add(button, i, j);
             }
         }
+    }
+
+    private String chooseRandomIfManyFiles(String dimension, String level) {
+        File folder = new File((new HomePageController()).pathToDimension(dimension));
+        File[] files = folder.listFiles((dir, name) -> name.startsWith(level));
+        if (files == null) {
+            return "";
+        }
+        int random = (int) (Math.random() * files.length);
+        return files[random].getName();
     }
 }

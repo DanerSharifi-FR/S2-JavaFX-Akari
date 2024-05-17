@@ -57,18 +57,21 @@ public class HomePageController implements Initializable {
             System.out.println("No dimension selected");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Please select a dimension");
+            alert.setHeaderText("Please select a valid difficulty");
             alert.showAndWait();
+        } else {
+            this.stage.close();
+            String[] dimensions = getDimension().split("x");
+            int dimensionWidth = Integer.parseInt(dimensions[0]);
+            int dimensionHeight = Integer.parseInt(dimensions[1]);
+            String difficulty = getDifficulty().toLowerCase();
+
+            AkariApp akariApp = new AkariApp();
+            akariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
+            if (this.AkariApp != null) {
+                this.AkariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
+            }
         }
-
-        String[] dimensions = getDimension().split("x");
-        int dimensionWidth = Integer.parseInt(dimensions[0]);
-        int dimensionHeight = Integer.parseInt(dimensions[1]);
-        String difficulty = getDifficulty().toLowerCase();
-
-        AkariApp akariApp = new AkariApp();
-        akariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
-        this.AkariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
     }
 
     @FXML

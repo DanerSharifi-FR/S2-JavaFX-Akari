@@ -36,10 +36,10 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <left>
-            <GridPane BorderPane.alignment="CENTER">
+            <GridPane prefHeight="459.0" prefWidth="223.0" BorderPane.alignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.79998779296875" minWidth="10.0" prefWidth="92.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="113.5999755859375" minWidth="10.0" prefWidth="92.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.00001831054686" minWidth="10.0" prefWidth="121.59999389648436" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="136.80001220703122" minWidth="10.0" prefWidth="85.60000610351562" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -69,12 +69,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" styleClass="new-game" text="New game" GridPane.rowIndex="4">
+                  <Button fx:id="newGameButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" styleClass="new-game" text="New game" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets right="2.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" styleClass="reset" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button fx:id="resetButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="87.0" styleClass="reset" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="2.0" right="2.0" />
                      </GridPane.margin>
@@ -84,16 +84,22 @@
                   <Label fx:id="difficultyLabel" styleClass="difficulty" text="Easy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label fx:id="timeLabel" styleClass="time" text="00:00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
+               <padding>
+                  <Insets left="16.0" />
+               </padding>
             </GridPane>
          </left>
          <center>
-            <GridPane fx:id="gridPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+            <GridPane fx:id="gridPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="503.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <BorderPane.margin>
+                  <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+               </BorderPane.margin>
             </GridPane>
          </center>
       </BorderPane>

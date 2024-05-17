@@ -1,0 +1,60 @@
+.mur-btn {
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.lumiere-btn {
+    -fx-background-color: #fff000;
+}
+
+.vide-btn {
+    -fx-background-color: #ffffff;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+}
+
+.amp-btn {
+    -fx-background-color: #00aeff;
+}
+
+.reset {
+    -fx-text-fill: #fff;
+    -fx-background-color: #6c757d;
+    -fx-border-color: #6c757d;
+    -fx-cursor: hand;
+    -fx-font-size: 16px
+}
+
+.reset:hover {
+    -fx-background-color: #5a6268;
+    -fx-border-color: #545b62;
+
+}
+
+.new-game, .start-button {
+    -fx-text-fill: #fff;
+    -fx-background-color: #28a745;
+    -fx-border-color: #28a745;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.new-game:hover, .start-button:hover {
+    -fx-background-color: #218838;
+    -fx-border-color: #1e7e34;
+}
+
+.quit-button {
+    -fx-text-fill: #fff;
+    -fx-background-color: #dc3545;
+    -fx-border-color: #dc3545;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.quit-button:hover {
+    -fx-background-color: #c82333;
+    -fx-border-color: #bd2130;
+}
