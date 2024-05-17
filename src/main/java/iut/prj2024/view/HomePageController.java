@@ -1,13 +1,19 @@
 package iut.prj2024.view;
 
 import iut.prj2024.AkariApp;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -103,6 +109,34 @@ public class HomePageController implements Initializable {
         stage.close();
     }
 
+    @FXML
+    public void rulesButtonAction() {
+        System.out.println("Rules button clicked");
+        String[] rules = {
+                "Chaque case blanche doit être éclairée.",
+                "Chaque ampoule diffuse verticalement et horizontalement un rayon lumineux qui éclaire toutes \n les cases blanches de sa ligne et de sa colonne jusqu’à ce qu'il atteigne une case noire.",
+                "Certaines cases noires contiennent un chiffre. Celui-ci est toujours compris entre 0 et 4.\nIls’agit du nombre de cases adjacentes (horizontalement ou verticalement, mais pas enoblique) contenant une ampoule.",
+                "Une ampoule ne peut pas en éclairer une autre (le rayon lumineux diffusé par une ampoule ne peut pas\natteindre une case occupée par une autre ampoule)."};
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Rules");
+        alert.setHeaderText("Akari Rules");
+        for (String rule : rules) {
+            alert.setContentText(alert.getContentText() + rule + "\n\n");
+        }
+        alert.showAndWait();
+    }
+
+    @FXML
+    public void contactDeveloperButtonAction() { // open url
+        System.out.println("Contact developer button clicked");
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.browse(new URL("https://daner-sharifi.com/contact").toURI());
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     /**
      * Initializes the controller class.
      *
@@ -111,6 +145,5 @@ public class HomePageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

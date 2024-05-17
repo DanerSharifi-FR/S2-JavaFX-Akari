@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\33773\OneDrive - etu.univ-tlse2.fr\BUT\S2\R2.02 - Développement d&apos;applications avec IHM\S2-JavaFX-Akari\target\Projet-1.0-shaded.jar</jar>
+  <outfile>C:\Users\33773\OneDrive - etu.univ-tlse2.fr\BUT\S2\R2.02 - Développement d&apos;applications avec IHM\S2-JavaFX-Akari\target\akari.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>true</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\33773\Downloads\akari01.ico</icon>
+  <classPath>
+    <mainClass>iut.prj2024.Main</mainClass>
+  </classPath>
+  <jre>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>

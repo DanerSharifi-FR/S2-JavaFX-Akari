@@ -3,11 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
@@ -17,38 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="348.0" minWidth="512.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.prj2024.view.HomePageController">
-   <top>
-      <VBox alignment="TOP_CENTER" prefHeight="90.0" prefWidth="512.0" BorderPane.alignment="CENTER">
-         <children>
-            <MenuBar>
-              <menus>
-                <Menu mnemonicParsing="false" text="Home" />
-                <Menu mnemonicParsing="false" text="?">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="How to play?" />
-                        <MenuItem mnemonicParsing="false" text="About us" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-            <Label text="Akari">
-               <padding>
-                  <Insets top="8.0" />
-               </padding>
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </Label>
-         </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </VBox>
-   </top>
+<BorderPane minHeight="348.0" minWidth="700.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="iut.prj2024.view.HomePageController">
    <bottom>
       <Label text="2023-2024 © Developed by Daner Sharifi at IUT of Blagnac" BorderPane.alignment="BOTTOM_CENTER">
          <BorderPane.margin>
@@ -56,132 +21,168 @@
          </BorderPane.margin>
       </Label>
    </bottom>
-   <center>
-      <GridPane prefHeight="195.0" prefWidth="546.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="248.79998779296875" minWidth="10.0" prefWidth="146.39996337890625" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="365.60003662109375" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="137.59998931884766" minHeight="10.0" prefHeight="101.59996795654297" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="127.80001220703126" minHeight="10.0" prefHeight="48.99999389648437" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="87.1999755859375" minHeight="10.0" prefHeight="75.40000610351564" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Dimensions">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <GridPane GridPane.columnIndex="1">
-              <columnConstraints>
-                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" selected="true" styleClass="dim-radio" text="3x3" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="dimensions" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="6x4" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="5x5" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="7x7" toggleGroup="$dimensions" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="14x14" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="10x10" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-            </GridPane>
-            <Label text="Difficulty" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
-              <columnConstraints>
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <RadioButton fx:id="easyRadioButton" mnemonicParsing="false" selected="true" text="Easy">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="difficulty" />
-                     </toggleGroup>
-                     <styleClass>
-                        <String fx:value="diff-radio" />
-                        <String fx:value="diff-radio-1" />
-                     </styleClass>
-                  </RadioButton>
-                  <RadioButton fx:id="hardRadioButton" disable="true" mnemonicParsing="false" text="Hard" toggleGroup="$difficulty" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="diff-radio" />
-                        <String fx:value="diff-radio-2" />
-                     </styleClass>
-                  </RadioButton>
-                  <RadioButton fx:id="trickyRadioButton" disable="true" mnemonicParsing="false" text="Tricky" toggleGroup="$difficulty" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="diff-radio" />
-                        <String fx:value="diff-radio-3" />
-                     </styleClass>
-                  </RadioButton>
-               </children>
-            </GridPane>
-            <ButtonBar GridPane.columnIndex="1" GridPane.rowIndex="2">
-              <buttons>
-                <Button mnemonicParsing="false" onAction="#quitButtonAction" styleClass="quit-button" text="Quit" />
-                  <Button mnemonicParsing="false" onAction="#startButtonAction" styleClass="start-button" text="Start" />
-              </buttons>
-            </ButtonBar>
-         </children>
+   <top>
+      <Label text="Akari" BorderPane.alignment="CENTER">
          <padding>
-            <Insets bottom="8.0" left="16.0" right="16.0" />
+            <Insets top="8.0" />
          </padding>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </GridPane>
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="195.0" prefWidth="546.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="248.79998779296875" minWidth="10.0" prefWidth="146.39996337890625" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="365.60003662109375" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="137.59998931884766" minHeight="10.0" prefHeight="101.59996795654297" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="127.80001220703126" minHeight="10.0" prefHeight="48.99999389648437" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Dimensions">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <GridPane GridPane.columnIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" selected="true" styleClass="dim-radio" text="3x3" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="dimensions" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="6x4" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="5x5" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="7x7" toggleGroup="$dimensions" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="14x14" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="10x10" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                     </children>
+                  </GridPane>
+                  <Label text="Difficulty" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <RadioButton fx:id="easyRadioButton" mnemonicParsing="false" selected="true" text="Easy">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="difficulty" />
+                           </toggleGroup>
+                           <styleClass>
+                              <String fx:value="diff-radio" />
+                              <String fx:value="diff-radio-1" />
+                           </styleClass>
+                        </RadioButton>
+                        <RadioButton fx:id="hardRadioButton" disable="true" mnemonicParsing="false" text="Hard" toggleGroup="$difficulty" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="diff-radio" />
+                              <String fx:value="diff-radio-2" />
+                           </styleClass>
+                        </RadioButton>
+                        <RadioButton fx:id="trickyRadioButton" disable="true" mnemonicParsing="false" text="Tricky" toggleGroup="$difficulty" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="diff-radio" />
+                              <String fx:value="diff-radio-3" />
+                           </styleClass>
+                        </RadioButton>
+                     </children>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="8.0" left="16.0" right="16.0" />
+               </padding>
+            </GridPane>
+            <GridPane alignment="CENTER" prefHeight="68.0" prefWidth="700.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.20001220703125" minWidth="10.0" prefWidth="107.19998016357422" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.40004425048835" minWidth="10.0" prefWidth="245.99998779296874" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.20002441406245" minWidth="10.0" prefWidth="167.80000000000007" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="135.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                <Button mnemonicParsing="false" onAction="#quitButtonAction" prefHeight="26.0" prefWidth="1000.0" styleClass="quit-button" text="Quit">
+                     <GridPane.margin>
+                        <Insets left="8.0" right="8.0" />
+                     </GridPane.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#contactDeveloperButtonAction" prefHeight="26.0" prefWidth="1000.0" styleClass="rules-btn" text="Contact Developer" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="8.0" right="8.0" />
+                     </GridPane.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#rulesButtonAction" prefWidth="1000.0" styleClass="rules-btn" text="Rules" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="8.0" right="8.0" />
+                     </GridPane.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#startButtonAction" prefWidth="1000.0" styleClass="start-button" text="Start" GridPane.columnIndex="3">
+                     <GridPane.margin>
+                        <Insets left="8.0" right="8.0" />
+                     </GridPane.margin></Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="8.0" right="8.0" />
+               </VBox.margin>
+            </GridPane>
+         </children>
+      </VBox>
    </center>
    
 </BorderPane>

@@ -1,0 +1,23 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\33773\OneDrive - etu.univ-tlse2.fr\BUT\S2\R2.02 - Développement d'applications avec IHM\S2-JavaFX-Akari\target\akari.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\33773\OneDrive - etu.univ-tlse2.fr\BUT\S2\R2.02 - Développement d'applications avec IHM\S2-JavaFX-Akari\target\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-18.0.1.1
+Substitute:	PATH = C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\laragon\bin\php\php-8.0.12-Win32-vs16-x64;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PowerShell\7\;C:\Program Files\dotnet\;C:\Users\33773\AppData\Local\Android\Sdk;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\laragon\bin;C:\laragon\bin\apache\httpd-2.4.54-win64-VS16\bin;C:\laragon\bin\composer;C:\laragon\bin\git\bin;C:\laragon\bin\git\cmd;C:\laragon\bin\git\mingw64\bin;C:\laragon\bin\git\usr\bin;C:\laragon\bin\laragon\utils;C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin;C:\laragon\bin\nginx\nginx-1.22.0;C:\laragon\bin\ngrok;C:\laragon\bin\nodejs\node-v18;C:\laragon\bin\notepad++;C:\laragon\bin\php\php-8.2.10-Win32-vs16-x64;C:\laragon\bin\python\python-3.10;C:\laragon\bin\python\python-3.10\Scripts;C:\laragon\bin\redis\redis-x64-5.0.14.1;C:\laragon\bin\telnet;C:\laragon\usr\bin;C:\Users\33773\AppData\Local\Yarn\config\global\node_modules\.bin;C:\Users\33773\AppData\Roaming\Composer\vendor\bin;C:\Users\33773\AppData\Roaming\npm;C:\Users\33773\AppData\Local\Microsoft\WindowsApps;C:\Users\33773\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\33773\AppData\Local\GitHubDesktop\bin;C:\Users\33773\AppData\Local\Android\Sdk;C:\Program Files\JetBrains\CLion 2023.3.2\bin;;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Java\apache-maven-3.9.6\bin;;C:\Program Files\Java\jdk-18.0.1.1\bin
+JRE paths:	C:\Program Files\Java\jdk-18.0.1.1;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\laragon\bin\php\php-8.0.12-Win32-vs16-x64;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PowerShell\7\;C:\Program Files\dotnet\;C:\Users\33773\AppData\Local\Android\Sdk;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\laragon\bin;C:\laragon\bin\apache\httpd-2.4.54-win64-VS16\bin;C:\laragon\bin\composer;C:\laragon\bin\git\bin;C:\laragon\bin\git\cmd;C:\laragon\bin\git\mingw64\bin;C:\laragon\bin\git\usr\bin;C:\laragon\bin\laragon\utils;C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin;C:\laragon\bin\nginx\nginx-1.22.0;C:\laragon\bin\ngrok;C:\laragon\bin\nodejs\node-v18;C:\laragon\bin\notepad++;C:\laragon\bin\php\php-8.2.10-Win32-vs16-x64;C:\laragon\bin\python\python-3.10;C:\laragon\bin\python\python-3.10\Scripts;C:\laragon\bin\redis\redis-x64-5.0.14.1;C:\laragon\bin\telnet;C:\laragon\usr\bin;C:\Users\33773\AppData\Local\Yarn\config\global\node_modules\.bin;C:\Users\33773\AppData\Roaming\Composer\vendor\bin;C:\Users\33773\AppData\Roaming\npm;C:\Users\33773\AppData\Local\Microsoft\WindowsApps;C:\Users\33773\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\33773\AppData\Local\GitHubDesktop\bin;C:\Users\33773\AppData\Local\Android\Sdk;C:\Program Files\JetBrains\CLion 2023.3.2\bin;;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Java\apache-maven-3.9.6\bin;;C:\Program Files\Java\jdk-18.0.1.1\bin
+Check launcher:	C:\Program Files\Java\jdk-18.0.1.1\bin\javaw.exe (OK)
+Warning:	formatJavaVersion() too many parts added.
+Version string: 1.018.000_001 / 64-Bit (OK)
+Main class:	iut.prj2024.Main
+Info:		Classpath not defined.
+Launcher:	C:\Program Files\Java\jdk-18.0.1.1\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\33773\OneDrive - etu.univ-tlse2.fr\BUT\S2\R2.02 - Développement d'applications avec IHM\S2-JavaFX-Akari\target\akari.exe" iut.prj2024.Main
+Args length:	159/32768 chars
+Exit code:	0

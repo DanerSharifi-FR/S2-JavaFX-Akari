@@ -14,7 +14,6 @@
     -fx-background-color: #fff000;
 }
 
-
 .vide-btn {
     -fx-background-color: #ffffff;
 }
@@ -83,6 +82,19 @@
 .quit-button:hover {
     -fx-background-color: #c82333;
     -fx-border-color: #bd2130;
+}
+
+.rules-btn {
+    -fx-text-fill: #fff;
+    -fx-background-color: #007bff;
+    -fx-border-color: #007bff;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.rules-btn:hover {
+    -fx-background-color: #0069d9;
+    -fx-border-color: #0062cc;
 }
 
 .alert {
