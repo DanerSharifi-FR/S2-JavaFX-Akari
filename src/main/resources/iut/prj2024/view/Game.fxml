@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane minHeight="512.0" minWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.prj2024.view.GameController">
@@ -18,21 +19,11 @@
          <BorderPane.margin>
             <Insets bottom="5.0" top="5.0" />
          </BorderPane.margin>
+         <padding>
+            <Insets top="16.0" />
+         </padding>
       </Label>
    </bottom>
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Home" />
-          <Menu mnemonicParsing="false" text="?">
-            <items>
-              <MenuItem mnemonicParsing="false" text="How to play?" />
-                  <MenuItem mnemonicParsing="false" text="About us" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <left>
@@ -69,12 +60,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="newGameButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" styleClass="new-game" text="New game" GridPane.rowIndex="4">
+                  <Button fx:id="newGameButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#newGameButtonAction" prefHeight="26.0" prefWidth="90.0" styleClass="new-game" text="New game" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets right="2.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button fx:id="resetButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="87.0" styleClass="reset" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button fx:id="resetButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#resetButtonAction" prefHeight="26.0" prefWidth="87.0" styleClass="reset" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="2.0" right="2.0" />
                      </GridPane.margin>
@@ -104,5 +95,29 @@
          </center>
       </BorderPane>
    </center>
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="47.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Home" />
+                <Menu mnemonicParsing="false" text="?">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="How to play?" />
+                        <MenuItem mnemonicParsing="false" text="About us" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" text=" ">
+               <padding>
+                  <Insets bottom="4.0" left="8.0" right="8.0" top="4.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="8.0" right="8.0" top="8.0" />
+               </VBox.margin></Label>
+         </children>
+      </VBox>
+   </top>
    
 </BorderPane>

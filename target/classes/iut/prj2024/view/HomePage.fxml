@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
@@ -85,7 +86,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" selected="true" text="3x3" GridPane.rowIndex="1">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" selected="true" styleClass="dim-radio" text="3x3" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -93,27 +94,27 @@
                         <ToggleGroup fx:id="dimensions" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="6x4" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="6x4" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="5x5" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="5x5" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="7x7" toggleGroup="$dimensions" GridPane.rowIndex="2">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="7x7" toggleGroup="$dimensions" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="14x14" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="14x14" toggleGroup="$dimensions" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" text="10x10" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <RadioButton mnemonicParsing="false" onAction="#checkDifficultyAvailable" styleClass="dim-radio" text="10x10" toggleGroup="$dimensions" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -142,16 +143,28 @@
                      <toggleGroup>
                         <ToggleGroup fx:id="difficulty" />
                      </toggleGroup>
+                     <styleClass>
+                        <String fx:value="diff-radio" />
+                        <String fx:value="diff-radio-1" />
+                     </styleClass>
                   </RadioButton>
                   <RadioButton fx:id="hardRadioButton" disable="true" mnemonicParsing="false" text="Hard" toggleGroup="$difficulty" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="diff-radio" />
+                        <String fx:value="diff-radio-2" />
+                     </styleClass>
                   </RadioButton>
                   <RadioButton fx:id="trickyRadioButton" disable="true" mnemonicParsing="false" text="Tricky" toggleGroup="$difficulty" GridPane.columnIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="diff-radio" />
+                        <String fx:value="diff-radio-3" />
+                     </styleClass>
                   </RadioButton>
                </children>
             </GridPane>

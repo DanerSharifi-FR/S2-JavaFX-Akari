@@ -8,8 +8,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FilenameFilter;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -19,18 +17,6 @@ public class HomePageController implements Initializable {
 
     @FXML
     private ToggleGroup dimensions;
-    @FXML
-    private RadioButton dimension3x3RadioButton;
-    @FXML
-    private RadioButton dimension5x5RadioButton;
-    @FXML
-    private RadioButton dimension6x4RadioButton;
-    @FXML
-    private RadioButton dimension7x7RadioButton;
-    @FXML
-    private RadioButton dimension10x10RadioButton;
-    @FXML
-    private RadioButton dimension14x14RadioButton;
 
     @FXML
     private ToggleGroup difficulty;
@@ -41,10 +27,10 @@ public class HomePageController implements Initializable {
     @FXML
     private RadioButton trickyRadioButton;
 
-    private AkariApp AkariApp;
+    private AkariApp akariApp;
 
-    public void setAkariApp(AkariApp getAkariApp) {
-        this.AkariApp = getAkariApp;
+    public void setAkariApp(AkariApp akariApp) {
+        this.akariApp = akariApp;
     }
 
     public void setStage(Stage stage) {
@@ -60,16 +46,13 @@ public class HomePageController implements Initializable {
             alert.setHeaderText("Please select a valid difficulty");
             alert.showAndWait();
         } else {
-            this.stage.close();
             String[] dimensions = getDimension().split("x");
             int dimensionWidth = Integer.parseInt(dimensions[0]);
             int dimensionHeight = Integer.parseInt(dimensions[1]);
             String difficulty = getDifficulty().toLowerCase();
 
-            AkariApp akariApp = new AkariApp();
-            akariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
-            if (this.AkariApp != null) {
-                this.AkariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
+            if (this.akariApp != null) {
+                this.akariApp.loadGame(dimensionWidth, dimensionHeight, difficulty);
             }
         }
     }
@@ -97,24 +80,13 @@ public class HomePageController implements Initializable {
     }
 
     private String[] availableLevels(String dimension) {
-        File folder = new File(pathToDimension(dimension));
-        File[] files = folder.listFiles((dir, name) -> name.startsWith("easy") || name.startsWith("hard") || name.startsWith("tricky"));
-        if (files == null) {
-            System.out.println("No levels found");
-            System.out.println(folder.getAbsolutePath());
-            return new String[0];
-        }
-        String[] levels = new String[3];
-        if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("easy"))) {
-            levels[0] = "easy";
-        }
-        if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("hard"))) {
-            levels[1] = "hard";
-        }
-        if (Arrays.stream(files).anyMatch(file -> file.getName().startsWith("tricky"))) {
-            levels[2] = "tricky";
-        }
-        return levels;
+        return switch (dimension) {
+            case "3x3", "6x4" -> new String[]{"easy", null, null};
+            case "5x5", "7x7" -> new String[]{"easy", "hard", "tricky"};
+            case "10x10" -> new String[]{"easy", "hard", null};
+            case "14x14" -> new String[]{"easy", null, "tricky"};
+            default -> new String[]{null, null, null};
+        };
     }
 
     private String getDimension() {
@@ -124,10 +96,6 @@ public class HomePageController implements Initializable {
     private String getDifficulty() {
         if (difficulty.getSelectedToggle() == null) return "";
         return difficulty.getSelectedToggle().toString().substring(difficulty.getSelectedToggle().toString().indexOf("'") + 1, difficulty.getSelectedToggle().toString().lastIndexOf("'"));
-    }
-
-    public String pathToDimension(String dimension) {
-        return "src/main/resources/iut/prj2024/jeu/dataset/" + dimension;
     }
 
     @FXML

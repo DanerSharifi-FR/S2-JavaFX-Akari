@@ -44,6 +44,7 @@ public class AkariApp extends Application {
             BorderPane homePage = loader.load();
             HomePageController controller = loader.getController();
             controller.setStage(this.primaryStage);
+            controller.setAkariApp(this);
 
             this.root.setCenter(homePage);
         } catch (Exception e) {
@@ -65,12 +66,15 @@ public class AkariApp extends Application {
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Play an Akari game");
 
-            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
             dialogStage.initOwner(this.primaryStage);
             dialogStage.setScene(scene);
 
-            GameController controller = loader.getController();
             System.out.println("Width: " + width + " Height: " + height + " Difficulty: " + difficulty);
+            GameController controller = loader.getController();
+            controller.setStage(dialogStage);
+            controller.setAkariApp(this);
+            controller.setJeuAraki(width, height);
             controller.setDimension(width, height);
             controller.setDifficulty(difficulty);
             controller.initGame();

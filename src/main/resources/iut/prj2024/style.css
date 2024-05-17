@@ -1,22 +1,48 @@
 .mur-btn {
-    -fx-background-color: #000000;
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 16px;
+    -fx-background-image: url('/iut/prj2024/images/wall.png');
+    -fx-background-size: cover;
+    -fx-text-fill: #00354e;
     -fx-font-weight: bold;
+}
+
+.mur-btn, .lumiere-btn, .vide-btn, .amp-btn {
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
 }
 
 .lumiere-btn {
     -fx-background-color: #fff000;
 }
 
+
 .vide-btn {
     -fx-background-color: #ffffff;
-    -fx-border-style: solid;
-    -fx-border-width: 1px;
 }
 
 .amp-btn {
-    -fx-background-color: #00aeff;
+    -fx-background-color: #fffccc;
+}
+
+.dim-radio {
+    -fx-padding: 4px 8px;
+}
+
+.dim-radio:selected {
+    -fx-background-color: rgba(0, 174, 255, 0.16);
+}
+
+.diff-radio {
+    -fx-padding: 4px 8px;
+}
+
+.diff-radio-1:selected {
+    -fx-background-color: rgba(17, 255, 0, 0.16);
+}
+.diff-radio-2:selected {
+    -fx-background-color: rgba(255, 153, 0, 0.16);
+}
+.diff-radio-3:selected {
+    -fx-background-color: rgba(255, 0, 0, 0.16);
 }
 
 .reset {
@@ -58,3 +84,18 @@
     -fx-background-color: #c82333;
     -fx-border-color: #bd2130;
 }
+
+.alert {
+    -fx-label-padding: 1px;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-font-size: 16px;
+}
+
+.alert-danger {
+    -fx-text-fill: #721c24;
+    -fx-background-color: #f8d7da;
+    -fx-border-color: #f5c6cb;
+}
+
